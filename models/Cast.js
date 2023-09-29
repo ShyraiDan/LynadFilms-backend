@@ -37,7 +37,7 @@ const CastSchema = new Schema({
     type: Number,
     required: true
   },
-  movies: { type: Types.ObjectId, ref: 'Film', required: true }
+  movies: [{ type: Types.ObjectId, ref: 'Film', required: true }]
 })
 
 export default model('Cast', CastSchema)

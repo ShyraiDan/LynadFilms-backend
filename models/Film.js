@@ -45,16 +45,10 @@ const FilmSchema = new Schema({
     type: Array,
     required: true
   },
-  director: { type: Types.ObjectId, ref: 'Cast', required: true },
-  stars: { type: Types.ObjectId, ref: 'Cast', required: true },
-  writer: {
-    type: Array,
-    required: true
-  },
-  crew: {
-    type: Array,
-    required: true
-  },
+  director: [{ type: Types.ObjectId, ref: 'Cast', required: true }],
+  stars: [{ type: Types.ObjectId, ref: 'Cast', required: true }],
+  writer: [{ type: Types.ObjectId, ref: 'Cast', required: true }],
+  crew: [{ type: Types.ObjectId, ref: 'Cast', required: true }],
   comments: {
     type: Array
   },

@@ -34,7 +34,7 @@ export const create = async (req, res) => {
 
 export const getAll = async (req, res) => {
   try {
-    const films = await FilmModel.find().populate('director').populate('stars')
+    const films = await FilmModel.find().populate('director').populate('stars').populate('writer').populate('crew')
     res.json(films)
   } catch (err) {
     console.log('Film getting failed: ', err)

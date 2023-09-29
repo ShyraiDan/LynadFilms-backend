@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
+import { Schema, model, Types } from 'mongoose'
 
-const CastSchema = new mongoose.Schema({
+const CastSchema = new Schema({
   castName: {
     type: String,
     require: true
@@ -29,7 +29,6 @@ const CastSchema = new mongoose.Schema({
     type: Array,
     required: true
   },
-
   birth: {
     type: Date,
     required: true
@@ -38,10 +37,7 @@ const CastSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  movies: {
-    type: Array,
-    required: true
-  }
+  movies: { type: Types.ObjectId, ref: 'Film', required: true }
 })
 
-export default mongoose.model('Cast', CastSchema)
+export default model('Cast', CastSchema)

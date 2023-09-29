@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
+import { Schema, model, SchemaTypes, Types } from 'mongoose'
 
-const FilmSchema = new mongoose.Schema({
+const FilmSchema = new Schema({
   filmName: {
     type: String,
     required: true
@@ -45,14 +45,8 @@ const FilmSchema = new mongoose.Schema({
     type: Array,
     required: true
   },
-  director: {
-    type: Array,
-    required: true
-  },
-  stars: {
-    type: Array,
-    required: true
-  },
+  director: { type: Types.ObjectId, ref: 'Cast', required: true },
+  stars: { type: Types.ObjectId, ref: 'Cast', required: true },
   writer: {
     type: Array,
     required: true
@@ -69,4 +63,4 @@ const FilmSchema = new mongoose.Schema({
   }
 })
 
-export default mongoose.model('Film', FilmSchema)
+export default model('Film', FilmSchema)

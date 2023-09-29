@@ -53,18 +53,18 @@ mongoose.connection.on('open', async () => {
   //   similarFilms: ['film']
   // })
   // --------
-  const cast = await CastModel.create({
-    castName: 'David Ellison',
-    role: ['Producer'],
-    photo: 'photo',
-    country: 'USA',
-    bio: 'David Ellison is an American film producer and CEO of Skydance Media. He is the son of the Oracle Corporation CTO Larry Ellison.',
-    photos: ['photo'],
-    videos: ['video'],
-    birth: 'January 12, 1983',
-    height: 185,
-    movies: '65170f44c619ea42fd01184b'
-  })
+  // const cast = await CastModel.create({
+  //   castName: 'David Ellison',
+  //   role: ['Producer'],
+  //   photo: 'photo',
+  //   country: 'USA',
+  //   bio: 'David Ellison is an American film producer and CEO of Skydance Media. He is the son of the Oracle Corporation CTO Larry Ellison.',
+  //   photos: ['photo'],
+  //   videos: ['video'],
+  //   birth: 'January 12, 1983',
+  //   height: 185,
+  //   movies: '65170f44c619ea42fd01184b'
+  // })
 })
 
 // cast

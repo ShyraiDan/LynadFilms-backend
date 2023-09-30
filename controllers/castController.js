@@ -17,6 +17,6 @@ export const getOne = async (req, res) => {
     res.json(actor)
   } catch (err) {
     console.log('One actor getting failed: ', err)
-    res.status(500).json({ message: 'One actor getting failed: ' })
+    res.status(500).json({ message: 'One actor getting failed' })
   }
 }

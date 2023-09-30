@@ -1,4 +1,4 @@
-import { Schema, model, SchemaTypes, Types } from 'mongoose'
+import { Schema, model, Types } from 'mongoose'
 
 const FilmSchema = new Schema({
   filmName: {

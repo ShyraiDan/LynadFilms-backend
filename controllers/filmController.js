@@ -22,6 +22,6 @@ export const getOne = async (req, res) => {
     res.json(film)
   } catch (err) {
     console.log('One film getting failed: ', err)
-    res.status(500).json({ message: 'One film getting failed:' })
+    res.status(500).json({ message: 'One film getting failed' })
   }
 }

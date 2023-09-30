@@ -29,7 +29,13 @@ app.get('/', (req, res) => {
 
 app.get('/films', FilmController.getAll)
 
-app.post('/films', FilmController.create)
+app.get('/films/:id', FilmController.getOne)
+
+// Cast
+
+app.get('/cast', CastController.getAll)
+
+app.get('/cast/:id', CastController.getOne)
 
 mongoose.connection.on('open', async () => {
   // const film = await FilmModel.create({
@@ -66,9 +72,6 @@ mongoose.connection.on('open', async () => {
   //   movies: '65170f44c619ea42fd01184b'
   // })
 })
-
-// cast
-app.post('/cast', CastController.create)
 
 // port
 app.listen(PORT, (err) => {

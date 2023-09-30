@@ -1,0 +1,36 @@
+{
+  "_id": "6516ec427e34a9dce1bdfb9f",
+  "castName": "Joby Harold",
+  "role": ["Producer"],
+  "photo": "photo",
+  "country": "United Kingdom",
+  "bio": "Joby Harold is an English screenwriter, producer and director who runs Safehouse Pictures with his producing partner, Tory Tunnell. The company was co-founded in 2005.",
+  "photos": ["photo"],
+  "videos": ["video"],
+  "birth": "1978-06-13T21:00:00.000Z",
+  "height": 173,
+  "movies": [
+    {
+      "_id": "6516eb436def499e58158812",
+      "filmName": "Transformers: Rise of the Beasts",
+      "rating": 6.1,
+      "tags": ["Action", "Sci-Fi", "Adventure"],
+      "duration": 127,
+      "description": "When a new threat capable of destroying the entire planet emerges, Optimus Prime and the Autobots must team up with a powerful faction known as the Maximals. With the fate of humanity hanging in the balance, humans Noah and Elena will do whatever it takes to help the Transformers as they engage in the ultimate battle to save Earth.",
+      "date": "2023-06-08T21:00:00.000Z",
+      "mmpa": "PG-13",
+      "imageUrl": "link",
+      "country": "USA",
+      "trailerLink": "link",
+      "otherPhotos": ["photo"],
+      "director": ["6516ec711aa29db2f98e8aed"],
+      "stars": ["6516ebb02d40ad68bf7cbcb7", "6516ebe1a19021a5a5e3ee65", "6516ec17ee356cd8d565a9f5"],
+      "writer": ["6516ec9c93fd3e18f2b53fdc"],
+      "crew": ["6516ec427e34a9dce1bdfb9f", "6516eccd054ecb3731e6f972"],
+      "comments": ["comment"],
+      "similarFilms": ["film"],
+      "__v": 0
+    }
+  ],
+  "__v": 0
+}

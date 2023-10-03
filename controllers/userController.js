@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt'
+import { genSalt, hash, compare } from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 import UserModel from '../models/User.js'
@@ -6,14 +6,14 @@ import UserModel from '../models/User.js'
 export const register = async (req, res) => {
   try {
     const password = req.body.password
-    const salt = await bcrypt.genSalt(10)
-    const hash = await bcrypt.hash(password, salt)
+    const salt = await genSalt(10)
+    const hashedPass = await hash(password, salt)
 
     const doc = new UserModel({
       email: req.body.email,
       fullName: req.body.fullName,
       avatarUrl: req.body.avatarUrl,
-      passwordHash: hash
+      passwordHash: hashedPass
     })
 
     const user = await doc.save()
@@ -44,7 +44,7 @@ export const login = async (req, res) => {
       return res.status(404).json({ message: 'User not found' })
     }
 
-    const isValid = await bcrypt.compare(req.body.password, user._doc.passwordHash)
+    const isValid = await compare(req.body.password, user._doc.passwordHash)
 
     if (!isValid) {
       return res.status(400).json({ message: 'Email or password incorrect' })
@@ -88,8 +88,8 @@ export const getUser = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const password = req.body.password
-    const salt = await bcrypt.genSalt(10)
-    const hash = await bcrypt.hash(password, salt)
+    const salt = await genSalt(10)
+    const hashedPass = await hash(password, salt)
 
     await UserModel.updateOne(
       { _id: req.body._id },
@@ -97,7 +97,7 @@ export const updateUser = async (req, res) => {
         avatarUrl: req.body.avatarUrl,
         fullName: req.body.fullName,
         favoriteFilms: req.body.favoriteFilms.split(','),
-        passwordHash: hash
+        passwordHash: hashedPass
       }
     ).then(() => res.json({ success: true }))
   } catch (err) {

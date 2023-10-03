@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model, Types } from 'mongoose'
 
 const UserSchema = new Schema(
   {
@@ -16,10 +16,7 @@ const UserSchema = new Schema(
       required: true
     },
     avatarUrl: String,
-    favoriteFilms: {
-      type: Array,
-      required: true
-    }
+    favoriteFilms: [{ type: Types.ObjectId, ref: 'Film' }]
   },
   {
     timestamps: true

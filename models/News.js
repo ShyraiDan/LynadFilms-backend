@@ -18,7 +18,7 @@ const NewsSchema = new Schema(
       type: String,
       required: true
     },
-    comments: [{ type: Types.ObjectId, ref: 'Comment', required: true }]
+    comments: [{ type: Types.ObjectId, ref: 'Comment' }]
   },
   {
     timestamps: true
